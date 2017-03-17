@@ -74,6 +74,7 @@ RUN pip install -q httplib2
 RUN pip install -q six
 RUN pip install -q ordereddict
 RUN pip install -q jira==0.50
+RUN pip install -q passlib==1.6.5
 
 # Decomment the next line if you want to use Eclipse and X11 capabilities
 #RUN apt-get install -y eclipse
