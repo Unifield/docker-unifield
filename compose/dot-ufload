@@ -1,2 +1,3 @@
 [postgres]
 db_host=db
+db_pw=ee414956fe34947659917caa94e83d77

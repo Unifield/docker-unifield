@@ -2,28 +2,24 @@ version: '2'
 
 services:
   uf-web:
-    image: unifield/web:2.1-3p1
+    image: unifield/web:6.0
     ports:
      - "8061:8061"
-    depends_on:
+    links:
      - uf-server
   uf-server:
-    image: unifield/server:2.1-3p1
+    image: unifield/server:6.0
     ports:
      - "8069:8069"
-     - "8070"
-    depends_on:
-     - db
+     - "8070:8070"
     links:
-     - "db:database"
+     - db
     volumes:
      - ./uf-server:/uf-server
   db:
-    image: unifield/postgres:8.4
-    ports:
-     - "5432"
+    image: postgres:9.6.3
     environment:
-     - "POSTGRESQL_USER=unifield"
-     - "POSTGRESQL_TRUST=YES"
+     - "POSTGRES_PASSWORD=ee414956fe34947659917caa94e83d77"
+     - "POSTGRES_USER=unifield"
     volumes:
      - ./postgres-data:/var/lib/postgresql

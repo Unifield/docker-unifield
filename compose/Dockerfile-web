@@ -1,5 +1,9 @@
-FROM unifield/base:1
+FROM python:2.7
+
 ADD unifield/web /opt/unifield/web
-RUN chown -R unifield /opt/unifield/web
+RUN groupadd -r unifield && useradd -r -g unifield unifield && \
+	chown -R unifield:unifield /opt/unifield/web && \
+	pip install --no-cache-dir /opt/unifield/web
+
 USER unifield
 CMD /opt/unifield/web/openerp-web.py --openerp-host=uf-server

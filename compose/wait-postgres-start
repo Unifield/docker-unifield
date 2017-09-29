@@ -6,9 +6,12 @@ if [ -z "$host" ]; then
 	exit 1
 fi
 
+PGPASSWORD=ee414956fe34947659917caa94e83d77
+export PGPASSWORD
+
 for i in `seq 1 30`
 do
-	psql -h $host postgres -q -c 'select 1;' > /dev/null
+	psql -h $host unifield -q -c 'select 1;' > /dev/null
 	if [ $? = 0 ]; then
 		# ok
 		exit 0
