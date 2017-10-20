@@ -1,4 +1,4 @@
-VER=6.0
+VER=6.1
 
 help:
 	@echo "targets:"
@@ -7,7 +7,7 @@ help:
 	@echo "  push: push the Docker images to Docker Hub"
 	@echo
 	@echo "Add the VER=xxx to the end to checkout tag xxx"
-	@echo "from Bazaar, i.e. make build VER=2.1-3"
+	@echo "from Bazaar, i.e. make build VER=$(VER)"
 
 # Print a help message if the bzr setup is not as expected.
 check_bzr:

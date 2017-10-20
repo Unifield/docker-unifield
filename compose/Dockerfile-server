@@ -5,6 +5,7 @@ RUN	apt-get update && \
 		postgresql-client-common \
 		postgresql-client \
 		net-tools \
+		p7zip-full \
 	&& apt-get clean
 
 ADD unifield/server /opt/unifield/server

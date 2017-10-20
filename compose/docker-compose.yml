@@ -2,13 +2,13 @@ version: '2'
 
 services:
   uf-web:
-    image: unifield/web:6.0
+    image: unifield/web:6.1
     ports:
      - "8061:8061"
     links:
      - uf-server
   uf-server:
-    image: unifield/server:6.0
+    image: unifield/server:6.1
     ports:
      - "8069:8069"
      - "8070:8070"
