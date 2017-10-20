@@ -28,3 +28,10 @@ build:
 push:
 	docker push unifield/web:$(VER)
 	docker push unifield/server:$(VER)
+
+dist:
+	rm -rf unifield-aio-$(VER)
+	mkdir unifield-aio-$(VER)
+	cp README-dist.txt unifield-aio-$(VER)/README.txt
+	cp docker-compose.yml unifield-aio-$(VER)
+	tar cfz unifield-aio-$(VER).tar.gz unifield-aio-$(VER)
